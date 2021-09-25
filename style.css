@@ -1,0 +1,433 @@
+:root{
+    --yellow:#FCDD26;
+}
+*{
+    font-family: 'Poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .3s cubic-bezier(.38,.1,.15,.7,.1,.12);
+}
+
+*::selection{
+    background:#333;
+    color:var(--yellow);
+}
+
+html{
+    font-size:62.5%;
+    overflow-x:hidden;      
+}
+
+html::-webkit-scrollbar{
+    width:1.3rem;
+}
+
+html::-webkit-scrollbar-track{
+    background:#333;
+}
+
+html::-webkit-scrollbar-thumb{
+    background:var(--yellow);
+}
+
+header{
+    width:100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    position: relative;
+}
+header .logo{
+    font-size: 2.5rem;
+    color: #333;
+}
+
+header .logo i{
+    transform: rotate(-65deg);
+    color: var(--yellow);
+}
+
+header .navbar a{
+    color: #333;
+    font-size: 1.7rem;
+    padding: 0 1rem;
+}
+
+header .navbar a:hover{
+    color: var(--yellow);
+}
+
+header .icons i, header .icons a{
+    font-size: 2.5rem;
+    color: #333;
+    padding-left: 1.5rem;
+    cursor: pointer;
+}
+
+header .icons i:hover, header .icons a:hover{
+    color: var(--yellow)
+}
+
+
+
+#search-box{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: var(--yellow);
+    padding: 2rem;
+    box-sizing: 0 .5rem 1rem rgba(0,0,0,.1);
+    /* membuat search bar hilang */
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+}
+
+#search-box.active{
+    transform: scaleY(1);
+    opacity: 1;
+}
+#search-box #search{
+    width: 100%;
+    padding: 1rem;
+    text-transform: none;
+    font-size: 2rem;
+}
+
+#search-box #search::placeholder{
+    text-transform: capitalize;
+}
+
+#search-box label{
+    font-size: 3rem;
+    color: #333;
+    padding-left: 2rem;
+    cursor: pointer;
+}
+
+.fa-times{
+    transform: rotate(-360deg);
+    transition: 1s;
+}
+
+
+header.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: rgba(0,0,0,.1);
+    z-index: 1000;
+}
+
+
+
+#menu{
+  display: none; 
+}
+
+.menu{
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+.menu img
+{
+    width: 100%;
+    height: auto;
+}
+
+.featured{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.product img{
+    width: 18%;
+    margin: 30px;
+    border-radius: 20px;
+    border: 1px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px 1px #888888;
+}
+
+.product{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-top: 20px 0;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.content .judulContent span{
+    color: #333;
+    font-size: 2rem;
+}
+
+.content .judulContent h3{
+    color: #333;
+    font-size: 4.5rem;
+}
+
+.content img{
+    width: 30%;
+}
+
+
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #111;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+footer .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+footer .container .sec-aboutus{
+    margin-right: 30px;
+    width: 40%;
+}
+footer .container h2{
+    position: relative;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+footer .container h2:before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+footer p{
+    color: #999;
+}
+.sci{
+    margin-top: 20px;
+    display: flex;
+    list-style: none;
+}
+.sci li a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.sci li a:hover{
+    background: #f00;
+}
+.sci li a .fa{
+    color: #fff;
+    font-size: 20px;
+}
+.sec-quickLinks{
+    position: relative;
+    width: 25%;
+}
+.sec-quickLinks ul li{
+    list-style: none;
+}
+.sec-quickLinks ul li a{
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.sec-quickLinks li a:hover{
+    color: #fff;
+}
+.sec-contact{
+    width: calc(35% - 60px);
+    margin-right: 0 !important;
+}
+.sec-contact .info{
+    position: relative;
+}
+.sec-contact .info li{
+    display: flex;
+    margin-bottom: 16px;     
+}
+.sec-contact .info li span:nth-child(1){
+    color: #fff;
+    font-size: 18px;
+    margin-right: 10px;
+}
+.sec-contact .info li a{
+    color: #999;
+    text-decoration: none;
+}
+.sec-contact .info li span{
+    color: #999;
+}
+.sec-contact .info li a:hover{
+    color: #fff;
+}
+.copyrightText{
+    width: 100%;
+    background: #181818;
+    padding: 8px 100px;
+    text-align: center;
+    color: #999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queris */
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;;
+    }
+
+    #menu{
+        display: block;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        text-align: center;
+        padding: 2rem;
+        z-index: 1000;
+        border-top: .1rem solid rgba(0,0,0,.1);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+    }
+
+    header .navbar a{
+        font-size: 2rem;
+        padding: 1.5rem;
+        display: block;
+    }
+
+    header .navbar.nav-toggle{
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+
+
+    .product{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product img{
+        width: 40%;
+    }
+
+    .content{
+        margin-top: 20px;
+    }
+
+    .content .judulContent h3{
+        color: #333;
+        font-size: 2.5rem;
+    }
+
+    .content img{
+        width: 35%;
+    }
+
+
+
+
+
+    footer{
+        padding: 40px;
+    }
+    footer .container{
+        flex-direction: column;
+    }
+    footer .container .sec-aboutus{
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    footer .container .sec-aboutus, .sec-quickLinks,.sec-contact{
+        width: 100%;
+    }
+    .copyrightText{
+        padding: 8px 40px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
